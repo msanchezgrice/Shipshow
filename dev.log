@@ -1,0 +1,890 @@
+
+> projectproof@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.5
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 984ms
+ ✓ Compiled /middleware in 85ms (73 modules)
+ ○ Compiling / ...
+ ✓ Compiled / in 1069ms (965 modules)
+ ⨯ Internal error: Error: @clerk/clerk-react: The publishableKey passed to Clerk is invalid. You can get your Publishable key at https://dashboard.clerk.com/last-active?path=api-keys. (key=pk_test_123)
+    at Object.throwInvalidPublishableKeyError (./node_modules/@clerk/shared/dist/chunk-T4WHYQYX.mjs:173:13)
+    at ClerkProviderBase (./node_modules/@clerk/clerk-react/dist/index.mjs:1872:69)
+    at au (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:10446)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:15122
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:46505)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:42922)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+digest: "1528610947"
+ GET / 500 in 1161ms
+ ⨯ Internal error: Error: @clerk/clerk-react: The publishableKey passed to Clerk is invalid. You can get your Publishable key at https://dashboard.clerk.com/last-active?path=api-keys. (key=pk_test_123)
+    at Object.throwInvalidPublishableKeyError (./node_modules/@clerk/shared/dist/chunk-T4WHYQYX.mjs:173:13)
+    at ClerkProviderBase (./node_modules/@clerk/clerk-react/dist/index.mjs:1872:69)
+    at au (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:10446)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:15122
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:46505)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:42922)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+digest: "1528610947"
+ HEAD / 500 in 21ms
+ ⨯ Internal error: Error: @clerk/clerk-react: The publishableKey passed to Clerk is invalid. You can get your Publishable key at https://dashboard.clerk.com/last-active?path=api-keys. (key=pk_test_123)
+    at Object.throwInvalidPublishableKeyError (./node_modules/@clerk/shared/dist/chunk-T4WHYQYX.mjs:173:13)
+    at ClerkProviderBase (./node_modules/@clerk/clerk-react/dist/index.mjs:1872:69)
+    at au (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:10446)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:15122
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:46505)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:42922)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+digest: "1528610947"
+ GET / 500 in 22ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled /[handle] in 287ms (885 modules)
+ ⨯ Internal error: Error: @clerk/clerk-react: The publishableKey passed to Clerk is invalid. You can get your Publishable key at https://dashboard.clerk.com/last-active?path=api-keys. (key=pk_test_123)
+    at Object.throwInvalidPublishableKeyError (./node_modules/@clerk/shared/dist/chunk-T4WHYQYX.mjs:173:13)
+    at ClerkProviderBase (./node_modules/@clerk/clerk-react/dist/index.mjs:1872:69)
+    at au (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:10446)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:15122
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:46505)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:42922)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+digest: "1528610947"
+ GET / 500 in 95ms
+ GET /favicon.ico 200 in 371ms
+ ⨯ Internal error: Error: @clerk/clerk-react: The publishableKey passed to Clerk is invalid. You can get your Publishable key at https://dashboard.clerk.com/last-active?path=api-keys. (key=pk_test_123)
+    at Object.throwInvalidPublishableKeyError (./node_modules/@clerk/shared/dist/chunk-T4WHYQYX.mjs:173:13)
+    at ClerkProviderBase (./node_modules/@clerk/clerk-react/dist/index.mjs:1872:69)
+    at au (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:10446)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:15122
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:46505)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:42922)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+digest: "1528610947"
+prisma:query SELECT "public"."User"."id", "public"."User"."handle", "public"."User"."name", "public"."User"."bio", "public"."User"."avatarUrl", "public"."User"."createdAt", "public"."User"."updatedAt" FROM "public"."User" WHERE ("public"."User"."handle" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:error 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+The table `public.User` does not exist in the current database.
+ ⨯ PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+The table `public.User` does not exist in the current database.
+    at async UserPage (./app/[handle]/page.tsx:17:18)
+digest: "484875125"
+prisma:query SELECT "public"."User"."id", "public"."User"."handle", "public"."User"."name", "public"."User"."bio", "public"."User"."avatarUrl", "public"."User"."createdAt", "public"."User"."updatedAt" FROM "public"."User" WHERE ("public"."User"."handle" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:error 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+The table `public.User` does not exist in the current database.
+ ⨯ Internal error: Error: @clerk/clerk-react: The publishableKey passed to Clerk is invalid. You can get your Publishable key at https://dashboard.clerk.com/last-active?path=api-keys. (key=pk_test_123)
+    at Object.throwInvalidPublishableKeyError (./node_modules/@clerk/shared/dist/chunk-T4WHYQYX.mjs:173:13)
+    at ClerkProviderBase (./node_modules/@clerk/clerk-react/dist/index.mjs:1872:69)
+    at au (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:10446)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:15122
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:46505)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:42922)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+digest: "1528610947"
+ ⨯ PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+The table `public.User` does not exist in the current database.
+    at async UserPage (./app/[handle]/page.tsx:17:18)
+digest: "484875125"
+ GET /favicon.ico 500 in 19ms
+ ⨯ Internal error: Error: @clerk/clerk-react: The publishableKey passed to Clerk is invalid. You can get your Publishable key at https://dashboard.clerk.com/last-active?path=api-keys. (key=pk_test_123)
+    at Object.throwInvalidPublishableKeyError (./node_modules/@clerk/shared/dist/chunk-T4WHYQYX.mjs:173:13)
+    at ClerkProviderBase (./node_modules/@clerk/clerk-react/dist/index.mjs:1872:69)
+    at au (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:10446)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:15122
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:46505)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:42922)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+digest: "1528610947"
+ GET / 500 in 23ms
+prisma:query SELECT 1
+ ⨯ Internal error: Error: @clerk/clerk-react: The publishableKey passed to Clerk is invalid. You can get your Publishable key at https://dashboard.clerk.com/last-active?path=api-keys. (key=pk_test_123)
+    at Object.throwInvalidPublishableKeyError (./node_modules/@clerk/shared/dist/chunk-T4WHYQYX.mjs:173:13)
+    at ClerkProviderBase (./node_modules/@clerk/clerk-react/dist/index.mjs:1872:69)
+    at au (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:10446)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:15122
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:46505)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:42922)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+digest: "1528610947"
+prisma:query SELECT "public"."User"."id", "public"."User"."handle", "public"."User"."name", "public"."User"."bio", "public"."User"."avatarUrl", "public"."User"."createdAt", "public"."User"."updatedAt" FROM "public"."User" WHERE ("public"."User"."handle" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:error 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+The table `public.User` does not exist in the current database.
+ ⨯ PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+The table `public.User` does not exist in the current database.
+    at async UserPage (./app/[handle]/page.tsx:17:18)
+digest: "484875125"
+ GET /favicon.ico 500 in 23ms
+ ✓ Compiled in 114ms (373 modules)
+ ✓ Compiled in 62ms (373 modules)
+ ✓ Compiled in 55ms (373 modules)
+ ✓ Compiled in 94ms (373 modules)
+ ⨯ Internal error: Error: @clerk/clerk-react: The publishableKey passed to Clerk is invalid. You can get your Publishable key at https://dashboard.clerk.com/last-active?path=api-keys. (key=pk_test_123)
+    at Object.throwInvalidPublishableKeyError (./node_modules/@clerk/shared/dist/chunk-T4WHYQYX.mjs:173:13)
+    at ClerkProviderBase (./node_modules/@clerk/clerk-react/dist/index.mjs:1872:69)
+    at au (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:10446)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:15122
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:46505)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:42922)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+digest: "1528610947"
+ GET / 500 in 28ms
+ ✓ Compiled /_not-found in 235ms (896 modules)
+ ⨯ Internal error: Error: @clerk/clerk-react: The publishableKey passed to Clerk is invalid. You can get your Publishable key at https://dashboard.clerk.com/last-active?path=api-keys. (key=pk_test_123)
+    at Object.throwInvalidPublishableKeyError (./node_modules/@clerk/shared/dist/chunk-T4WHYQYX.mjs:173:13)
+    at ClerkProviderBase (./node_modules/@clerk/clerk-react/dist/index.mjs:1872:69)
+    at au (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:10446)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:15122
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:46505)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:42922)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+digest: "1528610947"
+ ⨯ Internal error: Error: @clerk/clerk-react: The publishableKey passed to Clerk is invalid. You can get your Publishable key at https://dashboard.clerk.com/last-active?path=api-keys. (key=pk_test_123)
+    at Object.throwInvalidPublishableKeyError (./node_modules/@clerk/shared/dist/chunk-T4WHYQYX.mjs:173:13)
+    at ClerkProviderBase (./node_modules/@clerk/clerk-react/dist/index.mjs:1872:69)
+    at au (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:10446)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:15122
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:46505)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:42922)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+digest: "1528610947"
+ GET /_next/static/chunks/main-app.js 404 in 312ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 312ms
+ ✓ Compiled /[handle] in 43ms (527 modules)
+ ⨯ Error: Cannot find module './510.js'
+Require stack:
+- /Users/miguel/Downloads/projectproof/.next/server/webpack-runtime.js
+- /Users/miguel/Downloads/projectproof/.next/server/app/[handle]/page.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/require.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/load-components.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/build/utils.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/router-server.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/start-server.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1401:15)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1487:12)
+    at mod.require (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/miguel/Downloads/projectproof/.next/server/webpack-runtime.js:203:28)
+    at /Users/miguel/Downloads/projectproof/.next/server/webpack-runtime.js:116:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/miguel/Downloads/projectproof/.next/server/webpack-runtime.js:115:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/miguel/Downloads/projectproof/.next/server/webpack-runtime.js:167:22)
+    at /Users/miguel/Downloads/projectproof/.next/server/app/[handle]/page.js:1:6281
+    at Object.<anonymous> (/Users/miguel/Downloads/projectproof/.next/server/app/[handle]/page.js:1:6330)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1487:12)
+    at mod.require (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/require.js:109:84)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/load-components.js:98:84
+    at async loadComponentsImpl (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/load-components.js:98:26)
+    at async DevServer.findPageComponentsImpl (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/next-server.js:710:36)
+    at async DevServer.findPageComponents (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderPageComponent (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/base-server.js:1917:24)
+    at async DevServer.renderToResponseImpl (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/base-server.js:1969:32)
+    at async DevServer.pipeImpl (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/base-server.js:816:17)
+    at async /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/miguel/Downloads/projectproof/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/router-server.js:174:21)
+    at async handleRequest (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/router-server.js:353:24)
+    at async requestHandlerImpl (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/router-server.js:377:13)
+    at async Server.requestListener (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/miguel/Downloads/projectproof/.next/server/webpack-runtime.js',
+    '/Users/miguel/Downloads/projectproof/.next/server/app/[handle]/page.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/require.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/load-components.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/build/utils.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/start-server.js'
+  ],
+  page: '/favicon.ico'
+}
+ GET /favicon.ico 500 in 53ms
+ ✓ Compiled in 42ms (527 modules)
+ ✓ Compiled in 34ms (527 modules)
+ ⨯ Error: Cannot find module './510.js'
+Require stack:
+- /Users/miguel/Downloads/projectproof/.next/server/webpack-runtime.js
+- /Users/miguel/Downloads/projectproof/.next/server/app/page.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/require.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/load-components.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/build/utils.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/router-server.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/start-server.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1401:15)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1487:12)
+    at mod.require (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/miguel/Downloads/projectproof/.next/server/webpack-runtime.js:203:28)
+    at /Users/miguel/Downloads/projectproof/.next/server/webpack-runtime.js:116:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/miguel/Downloads/projectproof/.next/server/webpack-runtime.js:115:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/miguel/Downloads/projectproof/.next/server/webpack-runtime.js:167:22)
+    at /Users/miguel/Downloads/projectproof/.next/server/app/page.js:1:9855
+    at Object.<anonymous> (/Users/miguel/Downloads/projectproof/.next/server/app/page.js:1:9904)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1487:12)
+    at mod.require (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/require.js:109:84)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/load-components.js:98:84
+    at async loadComponentsImpl (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/load-components.js:98:26)
+    at async DevServer.findPageComponentsImpl (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/next-server.js:710:36)
+    at async DevServer.findPageComponents (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderPageComponent (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/base-server.js:1917:24)
+    at async DevServer.renderToResponseImpl (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/base-server.js:1969:32)
+    at async DevServer.pipeImpl (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/base-server.js:816:17)
+    at async /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/miguel/Downloads/projectproof/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/router-server.js:174:21)
+    at async handleRequest (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/router-server.js:353:24)
+    at async requestHandlerImpl (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/router-server.js:377:13)
+    at async Server.requestListener (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/miguel/Downloads/projectproof/.next/server/webpack-runtime.js',
+    '/Users/miguel/Downloads/projectproof/.next/server/app/page.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/require.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/load-components.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/build/utils.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/lib/start-server.js'
+  ],
+  page: '/'
+}
+ ✓ Compiled /_error in 136ms (1111 modules)
+ GET / 500 in 239ms
+ ⨯ Internal error: Error: @clerk/clerk-react: The publishableKey passed to Clerk is invalid. You can get your Publishable key at https://dashboard.clerk.com/last-active?path=api-keys. (key=pk_test_123)
+    at Object.throwInvalidPublishableKeyError (./node_modules/@clerk/shared/dist/chunk-T4WHYQYX.mjs:173:13)
+    at ClerkProviderBase (./node_modules/@clerk/clerk-react/dist/index.mjs:1872:69)
+    at au (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:10446)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:15122
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:46505)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:42922)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ac (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aw (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+digest: "1528610947"
+prisma:query SELECT 1
+prisma:query SELECT "public"."User"."id", "public"."User"."handle", "public"."User"."name", "public"."User"."bio", "public"."User"."avatarUrl", "public"."User"."createdAt", "public"."User"."updatedAt" FROM "public"."User" WHERE ("public"."User"."handle" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:error 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+The table `public.User` does not exist in the current database.
+ ⨯ PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+The table `public.User` does not exist in the current database.
+    at async UserPage (./app/[handle]/page.tsx:17:18)
+digest: "484875125"
+ GET /favicon.ico 500 in 63ms
+ ⨯ Failed to generate static paths for /[handle]:
+Error: Cannot find module './vendor-chunks/@clerk.js'
+Require stack:
+- /Users/miguel/Downloads/projectproof/.next/server/webpack-runtime.js
+- /Users/miguel/Downloads/projectproof/.next/server/app/[handle]/page.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/require.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/load-components.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/build/utils.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/dev/static-paths-worker.js
+- /Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1401:15)
+    at /Users/miguel/Downloads/projectproof/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1487:12)
+    at mod.require (/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/miguel/Downloads/projectproof/.next/server/webpack-runtime.js',
+    '/Users/miguel/Downloads/projectproof/.next/server/app/[handle]/page.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/require.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/load-components.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/build/utils.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/Users/miguel/Downloads/projectproof/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ]
+}
