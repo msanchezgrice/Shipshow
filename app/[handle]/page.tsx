@@ -34,7 +34,7 @@ export default async function UserPage({ params }: { params: { handle: string } 
           {user.projects.length === 0 ? (
             <p className="text-gray-600">No projects yet.</p>
           ) : (
-            user.projects.map((p) => (
+            user.projects.map((p: { id: string; title: string; description?: string | null; url?: string | null; imageUrl?: string | null }) => (
               <ProjectCard key={p.id} title={p.title} description={p.description} url={p.url} imageUrl={p.imageUrl} />
             ))
           )}

@@ -65,7 +65,7 @@ export default async function Dashboard() {
           </form>
           {dbUser.domains.length > 0 && (
             <ul className="mt-4 text-sm">
-              {dbUser.domains.map(d => (
+              {dbUser.domains.map((d: { id: string; domain: string }) => (
                 <li key={d.id} className="flex items-center justify-between py-1">
                   <span>{d.domain}</span>
                   <a className="text-indigo-600 hover:underline" target="_blank" href={`http://${d.domain}`}>Open</a>
@@ -92,7 +92,7 @@ export default async function Dashboard() {
         </div>
 
         <div className="mt-6 grid md:grid-cols-2 gap-6">
-          {dbUser.projects.map((p) => (
+          {dbUser.projects.map((p: { id: string; title: string; description?: string | null; url?: string | null; imageUrl?: string | null; sort: number }) => (
             <div key={p.id} className="rounded-xl border p-4">
               <form action={`/api/projects/${p.id}`} method="POST" className="space-y-2">
                 <input name="_method" defaultValue="PUT" type="hidden" />

@@ -4,11 +4,6 @@ import { prisma } from "@/lib/prisma";
 import { isMockingStripe } from "@/lib/stripe";
 
 let stripe: any = null;
-if (!isMockingStripe()) {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const Stripe = require("stripe");
-  stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, { apiVersion: "2024-04-10" });
-}
 
 export async function POST(req: Request) {
   const { userId } = await auth();

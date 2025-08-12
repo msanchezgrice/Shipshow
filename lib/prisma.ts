@@ -13,7 +13,6 @@ declare global {
 
 let prismaImpl: any;
 if (USE_MOCK_DB) {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const { mockPrisma } = require("./mockDb");
   prismaImpl = mockPrisma;
 } else {
@@ -26,4 +25,4 @@ if (USE_MOCK_DB) {
 
 export const prisma = prismaImpl as PrismaClient & any;
 
-if (process.env.NODE_ENV !== "production" && !USE_MOCKS) global.prisma = prisma;
+if (process.env.NODE_ENV !== "production" && !USE_MOCK_DB) global.prisma = prisma;
