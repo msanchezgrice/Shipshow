@@ -23,10 +23,7 @@ export async function currentUser(): Promise<{
 } | null> {
   if (!USE_MOCKS && HAS_CLERK) {
     const real = await (await import("@clerk/nextjs/server")).currentUser();
-    // @ts-expect-error: passthrough shape
     return real as any;
   }
   return { id: "dev_user_123", firstName: "Dev", lastName: "User", imageUrl: null };
 }
-
-
