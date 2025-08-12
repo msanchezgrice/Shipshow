@@ -29,7 +29,7 @@ export default async function Dashboard() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-semibold">Dashboard</h1>
-          <p className="text-gray-600">Signed in as <span className="font-medium">{dbUser.handle}</span></p>
+           <p className="text-gray-600">Signed in as <span className="font-medium">{dbUser.handle}</span>. Add projects below to build your shipshow.io page.</p>
         </div>
         <div className="flex gap-3">
           <Link href={`/${dbUser.handle}`} className="rounded-md border px-3 py-2 hover:bg-gray-50">View public page</Link>
