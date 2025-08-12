@@ -72,6 +72,26 @@ export function useAuth(): { isSignedIn: boolean } {
   return { isSignedIn: !!ctx?.isSignedIn };
 }
 
+export function SignOutControl({ children, redirectUrl = "/" }: { children?: React.ReactNode; redirectUrl?: string }) {
+  const handleClick = () => {
+    if (USE_REAL && isBrowser) {
+      const clerk = (window as any).Clerk;
+      if (clerk?.signOut) {
+        clerk.signOut({ redirectUrl });
+        return;
+      }
+    }
+    const ctx = (AuthContext as any)?._currentValue as AuthContextValue | null;
+    ctx?.signOut({ redirectUrl });
+    if (!ctx) window.location.href = redirectUrl;
+  };
+  return (
+    <button onClick={handleClick} className="text-sm rounded-md border px-3 py-1.5 hover:bg-gray-50">
+      {children || "Sign out"}
+    </button>
+  );
+}
+
 export function SignInButton(props: { children: React.ReactNode; mode?: string }) {
   if (USE_REAL && isBrowser) {
     const ClerkPkg: any = (global as any).__clerk_nextjs || require("@clerk/nextjs");
