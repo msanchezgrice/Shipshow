@@ -1,5 +1,5 @@
 import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider } from "@/lib/auth/client";
 import { Metadata } from "next";
 import Link from "next/link";
 

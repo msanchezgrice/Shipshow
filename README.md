@@ -29,20 +29,30 @@ Dead-simple MVP: one page per user, 5 projects free, $9/mo for unlimited + custo
 npm install
 ```
 
-2) **Create database** (Supabase or any Postgres). Grab the pooled connection string (PgBouncer/Transaction). Put it in `.env`:
+2) (Optional) **Dev without external services (mock mode)**
+
+Add this env to use built-in mocks for Clerk, Stripe, and an in-memory Prisma:
+
+```
+NEXT_PUBLIC_USE_MOCKS=1
+```
+
+Then run `npm run dev` and use Sign in/Sign up normally. The dashboard, billing, and CRUD flows will work locally without any external keys. Set `NEXT_PUBLIC_USE_MOCKS=0` to use real services.
+
+3) **Create database** (Supabase or any Postgres). Grab the pooled connection string (PgBouncer/Transaction). Put it in `.env`:
 
 ```
 DATABASE_URL=postgresql://postgres:[password]@[host]:6543/postgres?sslmode=require&pgbouncer=true
 ```
 
-3) **Clerk keys** (Dashboard → API Keys).
+4) **Clerk keys** (Dashboard → API Keys).
 
 ```
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_xxx
 CLERK_SECRET_KEY=sk_test_xxx
 ```
 
-4) **Stripe**
+5) **Stripe**
 
 - Create product “ProjectProof Unlimited” with a **recurring $9/month** price.
 - Put its price id here:
@@ -57,21 +67,21 @@ STRIPE_SECRET_KEY=sk_test_xxx
   - `customer.subscription.updated`
   - `customer.subscription.deleted`
 
-5) **App URLs**
+6) **App URLs**
 
 ```
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_ROOT_DOMAIN=localhost:3000
 ```
 
-6) **Prisma & DB schema**
+7) **Prisma & DB schema**
 
 ```bash
 npx prisma generate
 npx prisma migrate dev --name init
 ```
 
-7) **Run dev**
+8) **Run dev**
 
 ```bash
 npm run dev

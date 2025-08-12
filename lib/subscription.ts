@@ -4,16 +4,19 @@ export async function ensureUser(user: { id: string; firstName?: string | null; 
   const fullName = [user.firstName, user.lastName].filter(Boolean).join(" ") || null;
   const existing = await prisma.user.findUnique({ where: { id: user.id } });
   if (existing) return existing;
-  // create a placeholder until handle is set
-  return prisma.user.create({
+  const created = await prisma.user.create({
     data: {
       id: user.id,
       handle: `user-${user.id.slice(0, 8)}`,
       name: fullName || undefined,
       avatarUrl: user.imageUrl || undefined,
-      subscription: { create: { status: "free" } }
     },
   });
+  const subExisting = await prisma.subscription.findUnique({ where: { userId: user.id } });
+  if (!subExisting) {
+    await prisma.subscription.create({ data: { userId: user.id, status: "free" } });
+  }
+  return created;
 }
 
 export async function getSubscriptionStatus(userId: string) {
