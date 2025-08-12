@@ -1,6 +1,14 @@
 "use client";
 
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { 
+  ClerkProvider as RealClerkProvider, 
+  useAuth as useRealAuth, 
+  SignInButton as RealSignInButton, 
+  UserButton as RealUserButton, 
+  SignIn as RealSignIn, 
+  SignUp as RealSignUp 
+} from "@clerk/nextjs";
 
 // Toggle mock mode via env (default 1 in dev, 0 in prod if set)
 const USE_MOCKS = (process.env.NEXT_PUBLIC_USE_MOCKS ?? (process.env.NODE_ENV === "production" ? "0" : "1")) !== "0";
@@ -32,10 +40,7 @@ function getCookie(name: string): string | null {
 
 export function ClerkProvider({ children }: { children: React.ReactNode }) {
   if (USE_REAL && isBrowser) {
-    const ClerkPkg: any = (global as any).__clerk_nextjs || require("@clerk/nextjs");
-    (global as any).__clerk_nextjs = ClerkPkg;
-    const Comp = ClerkPkg.ClerkProvider as React.ComponentType<any>;
-    return <Comp publishableKey={PUBLISHABLE_KEY}>{children}</Comp>;
+    return <RealClerkProvider publishableKey={PUBLISHABLE_KEY}>{children}</RealClerkProvider>;
   }
 
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -63,9 +68,7 @@ export function ClerkProvider({ children }: { children: React.ReactNode }) {
 
 export function useAuth(): { isSignedIn: boolean } {
   if (USE_REAL && isBrowser) {
-    const ClerkPkg: any = (global as any).__clerk_nextjs || require("@clerk/nextjs");
-    (global as any).__clerk_nextjs = ClerkPkg;
-    const a = ClerkPkg.useAuth();
+    const a = useRealAuth();
     return { isSignedIn: !!a.isSignedIn };
   }
   const ctx = useContext(AuthContext);
@@ -92,12 +95,9 @@ export function SignOutControl({ children, redirectUrl = "/" }: { children?: Rea
   );
 }
 
-export function SignInButton(props: { children: React.ReactNode; mode?: string }) {
+export function SignInButton(props: { children: React.ReactNode; mode?: "redirect" | "modal" }) {
   if (USE_REAL && isBrowser) {
-    const ClerkPkg: any = (global as any).__clerk_nextjs || require("@clerk/nextjs");
-    (global as any).__clerk_nextjs = ClerkPkg;
-    const Comp = ClerkPkg.SignInButton as React.ComponentType<any>;
-    return <Comp {...props} />;
+    return <RealSignInButton {...props} />;
   }
   const ctx = useContext(AuthContext);
   return (
@@ -109,10 +109,7 @@ export function SignInButton(props: { children: React.ReactNode; mode?: string }
 
 export function UserButton(props: { afterSignOutUrl?: string }) {
   if (USE_REAL && isBrowser) {
-    const ClerkPkg: any = (global as any).__clerk_nextjs || require("@clerk/nextjs");
-    (global as any).__clerk_nextjs = ClerkPkg;
-    const Comp = ClerkPkg.UserButton as React.ComponentType<any>;
-    return <Comp {...props} />;
+    return <RealUserButton {...props} />;
   }
   const ctx = useContext(AuthContext);
   if (!ctx?.isSignedIn) return null;
@@ -125,10 +122,7 @@ export function UserButton(props: { afterSignOutUrl?: string }) {
 
 export function SignIn({ afterSignInUrl }: { afterSignInUrl?: string }) {
   if (USE_REAL && isBrowser) {
-    const ClerkPkg: any = (global as any).__clerk_nextjs || require("@clerk/nextjs");
-    (global as any).__clerk_nextjs = ClerkPkg;
-    const Comp = ClerkPkg.SignIn as React.ComponentType<any>;
-    return <Comp afterSignInUrl={afterSignInUrl} />;
+    return <RealSignIn afterSignInUrl={afterSignInUrl} />;
   }
   const ctx = useContext(AuthContext);
   return (
@@ -147,10 +141,7 @@ export function SignIn({ afterSignInUrl }: { afterSignInUrl?: string }) {
 
 export function SignUp({ afterSignUpUrl }: { afterSignUpUrl?: string }) {
   if (USE_REAL && isBrowser) {
-    const ClerkPkg: any = (global as any).__clerk_nextjs || require("@clerk/nextjs");
-    (global as any).__clerk_nextjs = ClerkPkg;
-    const Comp = ClerkPkg.SignUp as React.ComponentType<any>;
-    return <Comp afterSignUpUrl={afterSignUpUrl} />;
+    return <RealSignUp afterSignUpUrl={afterSignUpUrl} />;
   }
   const ctx = useContext(AuthContext);
   return (
@@ -166,5 +157,3 @@ export function SignUp({ afterSignUpUrl }: { afterSignUpUrl?: string }) {
     </div>
   );
 }
-
-
