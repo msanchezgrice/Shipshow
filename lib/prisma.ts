@@ -1,6 +1,10 @@
 import { PrismaClient } from "@prisma/client";
 
-const USE_MOCKS = (process.env.NEXT_PUBLIC_USE_MOCKS ?? (process.env.NODE_ENV === "production" ? "0" : "1")) !== "0";
+// Use mock DB if explicitly requested, or if using mock mode AND no DATABASE_URL is configured.
+const USE_MOCK_DB = (
+  (process.env.MOCK_DB === "1") ||
+  ((process.env.NEXT_PUBLIC_USE_MOCKS === "1" || (process.env.NEXT_PUBLIC_USE_MOCKS === undefined && process.env.NODE_ENV !== "production")) && !process.env.DATABASE_URL)
+) ? true : false;
 
 declare global {
   // eslint-disable-next-line no-var
@@ -8,7 +12,7 @@ declare global {
 }
 
 let prismaImpl: any;
-if (USE_MOCKS) {
+if (USE_MOCK_DB) {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const { mockPrisma } = require("./mockDb");
   prismaImpl = mockPrisma;
