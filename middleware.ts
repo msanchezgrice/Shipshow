@@ -1,3 +1,4 @@
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse, NextRequest } from "next/server";
 
 const PUBLIC_HOSTNAMES = [
@@ -6,12 +7,22 @@ const PUBLIC_HOSTNAMES = [
   process.env.NEXT_PUBLIC_VERCEL_URL || "",
 ].filter(Boolean);
 
-export async function middleware(req: NextRequest) {
+const isProtectedRoute = createRouteMatcher([
+  '/dashboard(.*)',
+  '/billing(.*)'
+]);
+
+export default clerkMiddleware(async (auth, req: NextRequest) => {
   const url = req.nextUrl;
   const host = req.headers.get("host") || "";
   const pathname = url.pathname || "/";
 
-  // Ignore Next internals and API routes
+  // Protect dashboard and billing routes
+  if (isProtectedRoute(req)) {
+    auth().protect();
+  }
+
+  // Ignore Next internals and API routes for domain routing
   if (
     pathname.startsWith("/api") ||
     pathname.startsWith("/_next") ||
@@ -43,8 +54,13 @@ export async function middleware(req: NextRequest) {
   }
 
   return NextResponse.next();
-}
+});
 
 export const config = {
-  matcher: ["/((?!_next|.*\..*).*)"],
+  matcher: [
+    // Skip Next.js internals and all static files, unless found in search params
+    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    // Always run for API routes
+    '/(api|trpc)(.*)',
+  ],
 };
