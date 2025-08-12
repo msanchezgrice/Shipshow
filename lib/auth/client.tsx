@@ -2,8 +2,11 @@
 
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 
-// Toggle mock mode: default ON unless explicitly set to 0
-const USE_MOCKS = (process.env.NEXT_PUBLIC_USE_MOCKS ?? "1") !== "0";
+// Toggle mock mode via env (default 1 in dev, 0 in prod if set)
+const USE_MOCKS = (process.env.NEXT_PUBLIC_USE_MOCKS ?? (process.env.NODE_ENV === "production" ? "0" : "1")) !== "0";
+const PUBLISHABLE_KEY = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || "";
+const USE_REAL = !USE_MOCKS && !!PUBLISHABLE_KEY;
+const isBrowser = typeof window !== "undefined";
 
 // Types compatible-enough with Clerk usage in this repo
 type AuthContextValue = {
@@ -28,28 +31,29 @@ function getCookie(name: string): string | null {
 }
 
 export function ClerkProvider({ children }: { children: React.ReactNode }) {
-  // Mock provider used in both dev and prod unless explicitly disabled
+  if (USE_REAL && isBrowser) {
+    const ClerkPkg: any = (global as any).__clerk_nextjs || require("@clerk/nextjs");
+    (global as any).__clerk_nextjs = ClerkPkg;
+    const Comp = ClerkPkg.ClerkProvider as React.ComponentType<any>;
+    return <Comp publishableKey={PUBLISHABLE_KEY}>{children}</Comp>;
+  }
+
   const [isSignedIn, setIsSignedIn] = useState(false);
 
   useEffect(() => {
-    if (!USE_MOCKS) return; // still mount consistently
     setIsSignedIn(getCookie("devSignedIn") === "1");
   }, []);
 
   const signIn = useCallback((opts?: { redirectUrl?: string }) => {
-    if (USE_MOCKS) {
-      setCookie("devSignedIn", "1");
-      setIsSignedIn(true);
-      if (opts?.redirectUrl) window.location.href = opts.redirectUrl;
-    }
+    setCookie("devSignedIn", "1");
+    setIsSignedIn(true);
+    if (opts?.redirectUrl) window.location.href = opts.redirectUrl;
   }, []);
 
   const signOut = useCallback((opts?: { redirectUrl?: string }) => {
-    if (USE_MOCKS) {
-      setCookie("devSignedIn", "0");
-      setIsSignedIn(false);
-      if (opts?.redirectUrl) window.location.href = opts.redirectUrl;
-    }
+    setCookie("devSignedIn", "0");
+    setIsSignedIn(false);
+    if (opts?.redirectUrl) window.location.href = opts.redirectUrl;
   }, []);
 
   const value = useMemo<AuthContextValue>(() => ({ isSignedIn, signIn, signOut }), [isSignedIn, signIn, signOut]);
@@ -58,11 +62,23 @@ export function ClerkProvider({ children }: { children: React.ReactNode }) {
 }
 
 export function useAuth(): { isSignedIn: boolean } {
+  if (USE_REAL && isBrowser) {
+    const ClerkPkg: any = (global as any).__clerk_nextjs || require("@clerk/nextjs");
+    (global as any).__clerk_nextjs = ClerkPkg;
+    const a = ClerkPkg.useAuth();
+    return { isSignedIn: !!a.isSignedIn };
+  }
   const ctx = useContext(AuthContext);
   return { isSignedIn: !!ctx?.isSignedIn };
 }
 
 export function SignInButton(props: { children: React.ReactNode; mode?: string }) {
+  if (USE_REAL && isBrowser) {
+    const ClerkPkg: any = (global as any).__clerk_nextjs || require("@clerk/nextjs");
+    (global as any).__clerk_nextjs = ClerkPkg;
+    const Comp = ClerkPkg.SignInButton as React.ComponentType<any>;
+    return <Comp {...props} />;
+  }
   const ctx = useContext(AuthContext);
   return (
     <span onClick={() => ctx?.signIn({ redirectUrl: "/dashboard" })} role="button" style={{ display: "inline-flex" }}>
@@ -72,6 +88,12 @@ export function SignInButton(props: { children: React.ReactNode; mode?: string }
 }
 
 export function UserButton(props: { afterSignOutUrl?: string }) {
+  if (USE_REAL && isBrowser) {
+    const ClerkPkg: any = (global as any).__clerk_nextjs || require("@clerk/nextjs");
+    (global as any).__clerk_nextjs = ClerkPkg;
+    const Comp = ClerkPkg.UserButton as React.ComponentType<any>;
+    return <Comp {...props} />;
+  }
   const ctx = useContext(AuthContext);
   if (!ctx?.isSignedIn) return null;
   return (
@@ -82,6 +104,12 @@ export function UserButton(props: { afterSignOutUrl?: string }) {
 }
 
 export function SignIn({ afterSignInUrl }: { afterSignInUrl?: string }) {
+  if (USE_REAL && isBrowser) {
+    const ClerkPkg: any = (global as any).__clerk_nextjs || require("@clerk/nextjs");
+    (global as any).__clerk_nextjs = ClerkPkg;
+    const Comp = ClerkPkg.SignIn as React.ComponentType<any>;
+    return <Comp afterSignInUrl={afterSignInUrl} />;
+  }
   const ctx = useContext(AuthContext);
   return (
     <div className="w-full max-w-sm rounded-xl border p-6 text-center">
@@ -98,6 +126,12 @@ export function SignIn({ afterSignInUrl }: { afterSignInUrl?: string }) {
 }
 
 export function SignUp({ afterSignUpUrl }: { afterSignUpUrl?: string }) {
+  if (USE_REAL && isBrowser) {
+    const ClerkPkg: any = (global as any).__clerk_nextjs || require("@clerk/nextjs");
+    (global as any).__clerk_nextjs = ClerkPkg;
+    const Comp = ClerkPkg.SignUp as React.ComponentType<any>;
+    return <Comp afterSignUpUrl={afterSignUpUrl} />;
+  }
   const ctx = useContext(AuthContext);
   return (
     <div className="w-full max-w-sm rounded-xl border p-6 text-center">

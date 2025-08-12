@@ -1,6 +1,6 @@
 "use client";
 
-import { SignInButton, UserButton, useAuth } from "@/lib/auth/client";
+ import { UserButton, useAuth } from "@/lib/auth/client";
 import Link from "next/link";
 
 export default function Nav() {
@@ -19,9 +19,7 @@ export default function Nav() {
               <UserButton afterSignOutUrl="/" />
             </>
           ) : (
-            <SignInButton mode="modal">
-              <button className="text-sm rounded-md border px-3 py-1.5 hover:bg-gray-50">Sign in</button>
-            </SignInButton>
+            <Link href="/sign-in" className="text-sm rounded-md border px-3 py-1.5 hover:bg-gray-50">Sign in</Link>
           )}
         </nav>
       </div>
