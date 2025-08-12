@@ -9,7 +9,7 @@ export default function Nav() {
     <header className="sticky top-0 bg-white/70 backdrop-blur border-b z-40">
       <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
         <Link href="/" className="font-semibold tracking-tight text-lg">
-          ProjectProof.io
+          shipshow.io
         </Link>
         <nav className="flex items-center gap-4">
           <Link href="/#pricing" className="text-sm text-gray-600 hover:text-gray-900">Pricing</Link>

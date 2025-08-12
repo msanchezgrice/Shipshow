@@ -1,4 +1,4 @@
-# ProjectProof.io — Show your work. Get hired.
+# shipshow.io — Show your work. Get hired.
 
 Dead-simple MVP: one page per user, 5 projects free, $9/mo for unlimited + custom domain.
 

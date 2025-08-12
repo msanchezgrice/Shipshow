@@ -10,7 +10,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-6xl font-semibold tracking-tight">
-              ProjectProof.io<br/> <span className="text-gray-700">Show your work. Get hired.</span>
+              shipshow.io<br/> <span className="text-gray-700">Show your work. Get hired.</span>
             </h1>
             <p className="mt-6 text-lg text-gray-600">
               One page per user. Drop in up to 5 projects free. Upgrade for unlimited + custom domain.
@@ -28,8 +28,8 @@ export default function HomePage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-6xl px-6 grid md:grid-cols-3 gap-6">
-          {[
-            { title: "Claim your handle", desc: "Pick a clean URL: projectproof.io/yourname" },
+            {[
+              { title: "Claim your handle", desc: "Pick a clean URL: shipshow.io/yourname" },
             { title: "Add up to 5 projects", desc: "Title, description, link & cover image. That’s it." },
             { title: "Share everywhere", desc: "Drop your page into job apps, DMs, and profiles." },
           ].map((f) => (
