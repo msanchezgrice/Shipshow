@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { ensureUser, MAX_FREE_PROJECTS, isPaid } from "@/lib/subscription";
 import Link from "next/link";
 import HandleForm from "@/components/HandleForm";
+import ProjectsList from "@/components/ProjectsList";
 
 export const dynamic = "force-dynamic";
 
@@ -75,42 +76,12 @@ export default async function Dashboard() {
         </div>
       </section>
 
-      <section className="mt-10 rounded-xl border p-6">
-        <div className="flex items-center justify-between">
-          <h2 className="font-semibold">Projects ({dbUser.projects.length}{paid ? "" : ` / ${MAX_FREE_PROJECTS}`})</h2>
-          {canAdd ? (
-            <form action="/api/projects" method="POST">
-              <button className="rounded-md bg-black text-white px-3 py-2">Add project</button>
-            </form>
-          ) : (
-            <Link href="/billing" className="rounded-md bg-black text-white px-3 py-2">Upgrade to add more</Link>
-          )}
-        </div>
-
-        <div className="mt-6 grid md:grid-cols-2 gap-6">
-          {dbUser.projects.map((p: { id: string; title: string; description?: string | null; url?: string | null; imageUrl?: string | null; sort: number }) => (
-            <div key={p.id} className="rounded-xl border p-4">
-              <form action={`/api/projects/${p.id}`} method="POST" className="space-y-2">
-                <input name="_method" defaultValue="PUT" type="hidden" />
-                <div className="flex gap-3">
-                  <input name="title" defaultValue={p.title} placeholder="Title" className="flex-1 rounded-md border px-3 py-2" />
-                  <input name="sort" defaultValue={p.sort} type="number" className="w-24 rounded-md border px-3 py-2" />
-                </div>
-                <textarea name="description" defaultValue={p.description || ""} placeholder="Description" className="w-full rounded-md border px-3 py-2" rows={3} />
-                <input name="url" defaultValue={p.url || ""} placeholder="Link (optional)" className="w-full rounded-md border px-3 py-2" />
-                <input name="imageUrl" defaultValue={p.imageUrl || ""} placeholder="Image URL (optional)" className="w-full rounded-md border px-3 py-2" />
-                <div className="flex justify-between pt-2">
-                  <button className="rounded-md border px-3 py-2 hover:bg-gray-50">Save</button>
-                </div>
-              </form>
-              <form action={`/api/projects/${p.id}`} method="POST" className="mt-2">
-                <input name="_method" defaultValue="DELETE" type="hidden" />
-                <button className="text-red-600">Delete</button>
-              </form>
-            </div>
-          ))}
-        </div>
-      </section>
+      <ProjectsList 
+        initialProjects={dbUser.projects}
+        canAdd={canAdd}
+        paid={paid}
+        maxProjects={MAX_FREE_PROJECTS}
+      />
     </main>
   );
 }
