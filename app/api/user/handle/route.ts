@@ -11,9 +11,20 @@ export async function POST(req: Request) {
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const user = await currentUser();
   if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  const form = await req.formData();
-  const handle = String(form.get("handle") || "").toLowerCase();
-  if (!validHandle(handle)) return NextResponse.json({ error: "Invalid handle" }, { status: 400 });
+  
+  // Support both FormData and JSON
+  let handle: string;
+  const contentType = req.headers.get("content-type");
+  
+  if (contentType?.includes("application/json")) {
+    const body = await req.json();
+    handle = String(body.handle || "").toLowerCase();
+  } else {
+    const form = await req.formData();
+    handle = String(form.get("handle") || "").toLowerCase();
+  }
+  
+  if (!validHandle(handle)) return NextResponse.json({ error: "Invalid handle format" }, { status: 400 });
 
   try {
     await prisma.user.update({
@@ -24,7 +35,13 @@ export async function POST(req: Request) {
         avatarUrl: user.imageUrl || undefined,
       },
     });
-    return NextResponse.redirect(new URL("/dashboard", req.url));
+    
+    // Return success for JSON requests, redirect for form requests
+    if (contentType?.includes("application/json")) {
+      return NextResponse.json({ success: true, handle });
+    } else {
+      return NextResponse.redirect(new URL("/dashboard", req.url));
+    }
   } catch (e: any) {
     if (e.code === "P2002") {
       return NextResponse.json({ error: "Handle already taken" }, { status: 400 });

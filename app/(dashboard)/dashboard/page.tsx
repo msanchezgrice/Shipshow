@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { ensureUser, MAX_FREE_PROJECTS, isPaid } from "@/lib/subscription";
 import Link from "next/link";
+import HandleForm from "@/components/HandleForm";
 
 export const dynamic = "force-dynamic";
 
@@ -40,15 +41,10 @@ export default async function Dashboard() {
       <section className="mt-10 grid md:grid-cols-2 gap-8">
         <div className="rounded-xl border p-6">
           <h2 className="font-semibold">Your handle</h2>
-          <p className="text-sm text-gray-600 mt-1">This is your public URL: projectproof.io/<span className="font-mono">{dbUser.handle}</span></p>
-          <form className="mt-4" action="/api/user/handle" method="POST">
-            <div className="flex gap-3">
-              <input required minLength={3} maxLength={30} pattern="[a-z0-9-]+"
-                defaultValue={dbUser.handle} name="handle" className="flex-1 rounded-md border px-3 py-2" />
-              <button className="rounded-md bg-black text-white px-4">Save</button>
-            </div>
-            <p className="text-xs text-gray-500 mt-2">Lowercase letters, numbers, and dashes only.</p>
-          </form>
+          <p className="text-sm text-gray-600 mt-1">This is your public URL: shipshow.io/<span className="font-mono">{dbUser.handle}</span></p>
+          <div className="mt-4">
+            <HandleForm currentHandle={dbUser.handle} />
+          </div>
         </div>
 
         <div className="rounded-xl border p-6">
