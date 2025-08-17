@@ -1,6 +1,72 @@
 import { NextResponse } from "next/server";
 import * as cheerio from "cheerio";
 
+// Helper function to resolve URLs against base URL
+function resolveUrl(base: URL, candidate: string | undefined | null): string {
+  if (!candidate) return '';
+  
+  // Return data URLs as-is
+  if (candidate.startsWith('data:')) return candidate;
+  
+  // Handle protocol-relative URLs
+  if (candidate.startsWith('//')) {
+    return `${base.protocol}${candidate}`;
+  }
+  
+  try {
+    return new URL(candidate, base.toString()).toString();
+  } catch {
+    return '';
+  }
+}
+
+// Helper function to pick first non-empty value
+function pickFirst(...candidates: (string | undefined | null)[]): string {
+  for (const candidate of candidates) {
+    if (candidate && candidate.trim()) {
+      return candidate.trim();
+    }
+  }
+  return '';
+}
+
+// Helper function to verify image URL
+async function verifyImage(url: string, referer: string): Promise<string | null> {
+  if (!url) return null;
+  
+  const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36';
+  
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+    
+    const response = await fetch(url, {
+      method: 'HEAD',
+      signal: controller.signal,
+      headers: {
+        'User-Agent': UA,
+        'Referer': referer,
+        'Accept': 'image/*,*/*;q=0.8',
+      },
+    });
+    
+    clearTimeout(timeoutId);
+    
+    if (response.ok) {
+      const contentType = response.headers.get('content-type') || '';
+      if (contentType.startsWith('image/')) {
+        return url;
+      }
+    }
+  } catch (error) {
+    // If HEAD fails, return the URL anyway - some servers block HEAD requests
+    // The browser will handle the final validation
+    return url;
+  }
+  
+  return null;
+}
+
 export async function POST(req: Request) {
   try {
     const { url } = await req.json();
@@ -37,13 +103,15 @@ export async function POST(req: Request) {
     // Fetch the webpage with timeout
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+    
+    const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36';
 
     let response: Response;
     try {
       response = await fetch(parsedUrl.toString(), {
         signal: controller.signal,
         headers: {
-          'User-Agent': 'Mozilla/5.0 (compatible; ShipShow-Bot/1.0; +https://shipshow.io)',
+          'User-Agent': UA,
           'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
           'Accept-Language': 'en-US,en;q=0.5',
         },
@@ -87,31 +155,32 @@ export async function POST(req: Request) {
       $('meta[name="description"]').attr('content') ||
       '';
 
-    // Extract image
-    let imageUrl = 
-      $('meta[property="og:image"]').attr('content') ||
-      $('meta[name="twitter:image"]').attr('content') ||
-      '';
+    // Extract image - check multiple meta tag sources
+    const imageCandidates = [
+      $('meta[property="og:image:secure_url"]').attr('content'),
+      $('meta[property="og:image:url"]').attr('content'),
+      $('meta[property="og:image"]').attr('content'),
+      $('meta[name="twitter:image:src"]').attr('content'),
+      $('meta[name="twitter:image"]').attr('content'),
+    ];
+    
+    let imageUrl = resolveUrl(parsedUrl, pickFirst(...imageCandidates));
 
-    // If no og:image, try to find a significant image
+    // If no meta image found, try to find a significant img element
     if (!imageUrl) {
       const images = $('img').toArray();
       for (const img of images) {
         const src = $(img).attr('src');
-        if (src && !src.includes('logo') && !src.includes('icon')) {
-          imageUrl = src;
-          break;
+        if (src && !src.includes('logo') && !src.includes('icon') && !src.includes('avatar')) {
+          imageUrl = resolveUrl(parsedUrl, src);
+          if (imageUrl) break;
         }
       }
     }
 
-    // Make image URL absolute if it's relative
-    if (imageUrl && !imageUrl.startsWith('http')) {
-      try {
-        imageUrl = new URL(imageUrl, parsedUrl.origin).toString();
-      } catch {
-        imageUrl = ''; // Invalid relative URL
-      }
+    // Verify the image URL if found
+    if (imageUrl) {
+      imageUrl = await verifyImage(imageUrl, parsedUrl.toString()) || '';
     }
 
     // Detect technology stack
@@ -157,20 +226,14 @@ export async function POST(req: Request) {
     });
 
     // Get favicon
-    let favicon = 
-      $('link[rel="icon"]').attr('href') ||
-      $('link[rel="shortcut icon"]').attr('href') ||
-      $('link[rel="apple-touch-icon"]').attr('href') ||
-      '/favicon.ico';
-
-    // Make favicon URL absolute
-    if (favicon && !favicon.startsWith('http')) {
-      try {
-        favicon = new URL(favicon, parsedUrl.origin).toString();
-      } catch {
-        favicon = '';
-      }
-    }
+    const faviconCandidates = [
+      $('link[rel="icon"]').attr('href'),
+      $('link[rel="shortcut icon"]').attr('href'),
+      $('link[rel="apple-touch-icon"]').attr('href'),
+      '/favicon.ico'
+    ];
+    
+    let favicon = resolveUrl(parsedUrl, pickFirst(...faviconCandidates));
 
     return NextResponse.json({
       title: title.trim().substring(0, 200), // Limit title length
