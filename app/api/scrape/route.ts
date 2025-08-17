@@ -205,10 +205,7 @@ export async function POST(req: Request) {
     }
 
     const html = await response.text();
-    const $ = cheerio.load(html, {
-      decodeEntities: true,
-      normalizeWhitespace: true,
-    });
+    const $ = cheerio.load(html);
 
     // Extract title - try multiple sources
     const title = pickFirst(
