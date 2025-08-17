@@ -5,18 +5,37 @@ import * as cheerio from "cheerio";
 function resolveUrl(base: URL, candidate: string | undefined | null): string {
   if (!candidate) return '';
   
-  // Return data URLs as-is
-  if (candidate.startsWith('data:')) return candidate;
+  // Clean up the candidate URL
+  candidate = candidate.trim();
+  
+  // Return data URLs and absolute URLs as-is
+  if (candidate.startsWith('data:') || candidate.startsWith('blob:')) {
+    return candidate;
+  }
   
   // Handle protocol-relative URLs
   if (candidate.startsWith('//')) {
     return `${base.protocol}${candidate}`;
   }
   
+  // Handle absolute URLs
+  if (candidate.startsWith('http://') || candidate.startsWith('https://')) {
+    return candidate;
+  }
+  
+  // Handle relative URLs
   try {
     return new URL(candidate, base.toString()).toString();
   } catch {
-    return '';
+    // If URL construction fails, try to handle edge cases
+    if (candidate.startsWith('/')) {
+      // Absolute path
+      return `${base.protocol}//${base.host}${candidate}`;
+    } else {
+      // Relative path
+      const basePath = base.pathname.substring(0, base.pathname.lastIndexOf('/') + 1);
+      return `${base.protocol}//${base.host}${basePath}${candidate}`;
+    }
   }
 }
 
@@ -30,41 +49,82 @@ function pickFirst(...candidates: (string | undefined | null)[]): string {
   return '';
 }
 
-// Helper function to verify image URL
-async function verifyImage(url: string, referer: string): Promise<string | null> {
-  if (!url) return null;
+// Helper to extract clean text from HTML
+function extractText($: cheerio.CheerioAPI, selector: string): string {
+  return $(selector).first().text().trim().replace(/\s+/g, ' ');
+}
+
+// Helper to find the best image from the page
+function findBestImage($: cheerio.CheerioAPI, baseUrl: URL): string {
+  // First try Open Graph and Twitter cards (these are usually the best quality)
+  const metaImages = [
+    $('meta[property="og:image:secure_url"]').attr('content'),
+    $('meta[property="og:image:url"]').attr('content'),
+    $('meta[property="og:image"]').attr('content'),
+    $('meta[name="twitter:image:src"]').attr('content'),
+    $('meta[name="twitter:image"]').attr('content'),
+    $('meta[itemprop="image"]').attr('content'),
+    $('link[rel="image_src"]').attr('href'),
+  ];
   
-  const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36';
-  
-  try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
-    
-    const response = await fetch(url, {
-      method: 'HEAD',
-      signal: controller.signal,
-      headers: {
-        'User-Agent': UA,
-        'Referer': referer,
-        'Accept': 'image/*,*/*;q=0.8',
-      },
-    });
-    
-    clearTimeout(timeoutId);
-    
-    if (response.ok) {
-      const contentType = response.headers.get('content-type') || '';
-      if (contentType.startsWith('image/')) {
-        return url;
-      }
-    }
-  } catch (error) {
-    // If HEAD fails, return the URL anyway - some servers block HEAD requests
-    // The browser will handle the final validation
-    return url;
+  // Try meta images first
+  const metaImage = pickFirst(...metaImages);
+  if (metaImage) {
+    return resolveUrl(baseUrl, metaImage);
   }
   
-  return null;
+  // Look for article/content images
+  const contentSelectors = [
+    'article img',
+    'main img',
+    '.content img',
+    '.post img',
+    '.entry-content img',
+    '[role="main"] img',
+    '.article-body img',
+    '.post-content img',
+  ];
+  
+  for (const selector of contentSelectors) {
+    const $imgs = $(selector);
+    if ($imgs.length > 0) {
+      const src = $imgs.first().attr('src') || $imgs.first().attr('data-src');
+      if (src) {
+        return resolveUrl(baseUrl, src);
+      }
+    }
+  }
+  
+  // Look for any substantial image
+  const allImages = $('img').toArray();
+  for (const img of allImages) {
+    const $img = $(img);
+    const src = $img.attr('src') || $img.attr('data-src') || $img.attr('data-lazy-src');
+    
+    // Skip small images (likely icons/logos)
+    const width = parseInt($img.attr('width') || '0');
+    const height = parseInt($img.attr('height') || '0');
+    
+    if (width > 200 || height > 200) {
+      if (src) {
+        return resolveUrl(baseUrl, src);
+      }
+    }
+    
+    // Check for images that aren't logos/icons based on URL patterns
+    if (src && 
+        !src.includes('logo') && 
+        !src.includes('icon') && 
+        !src.includes('avatar') && 
+        !src.includes('profile') &&
+        !src.includes('button') &&
+        !src.includes('badge') &&
+        !src.endsWith('.svg')) {
+      return resolveUrl(baseUrl, src);
+    }
+  }
+  
+  return '';
 }
 
 export async function POST(req: Request) {
@@ -95,16 +155,18 @@ export async function POST(req: Request) {
       hostname.startsWith('127.') ||
       hostname.startsWith('192.168.') ||
       hostname.startsWith('10.') ||
-      hostname.match(/^172\.(1[6-9]|2\d|3[01])\./)
+      hostname.startsWith('172.') ||
+      hostname.includes('local')
     ) {
       return NextResponse.json({ error: "Private URLs are not allowed" }, { status: 400 });
     }
 
     // Fetch the webpage with timeout
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+    const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
     
-    const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36';
+    // Use a more comprehensive User-Agent
+    const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 
     let response: Response;
     try {
@@ -112,16 +174,20 @@ export async function POST(req: Request) {
         signal: controller.signal,
         headers: {
           'User-Agent': UA,
-          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-          'Accept-Language': 'en-US,en;q=0.5',
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+          'Accept-Language': 'en-US,en;q=0.9',
+          'Accept-Encoding': 'gzip, deflate, br',
+          'Cache-Control': 'no-cache',
+          'Pragma': 'no-cache',
         },
+        redirect: 'follow',
       });
     } catch (error: any) {
       clearTimeout(timeoutId);
       if (error.name === 'AbortError') {
         return NextResponse.json({ error: "Request timeout - website took too long to respond" }, { status: 408 });
       }
-      return NextResponse.json({ error: "Failed to fetch website" }, { status: 500 });
+      return NextResponse.json({ error: "Failed to fetch website. The site might be down or blocking access." }, { status: 500 });
     } finally {
       clearTimeout(timeoutId);
     }
@@ -139,105 +205,114 @@ export async function POST(req: Request) {
     }
 
     const html = await response.text();
-    const $ = cheerio.load(html);
+    const $ = cheerio.load(html, {
+      decodeEntities: true,
+      normalizeWhitespace: true,
+    });
 
-    // Extract title
-    const title = 
-      $('meta[property="og:title"]').attr('content') ||
-      $('meta[name="twitter:title"]').attr('content') ||
-      $('title').first().text() ||
-      '';
+    // Extract title - try multiple sources
+    const title = pickFirst(
+      $('meta[property="og:title"]').attr('content'),
+      $('meta[name="twitter:title"]').attr('content'),
+      $('meta[property="og:site_name"]').attr('content'),
+      $('meta[name="title"]').attr('content'),
+      extractText($, 'h1'),
+      extractText($, 'title'),
+    );
 
-    // Extract description
-    const description = 
-      $('meta[property="og:description"]').attr('content') ||
-      $('meta[name="twitter:description"]').attr('content') ||
-      $('meta[name="description"]').attr('content') ||
-      '';
+    // Extract description - try multiple sources
+    const description = pickFirst(
+      $('meta[property="og:description"]').attr('content'),
+      $('meta[name="twitter:description"]').attr('content'),
+      $('meta[name="description"]').attr('content'),
+      $('meta[property="og:summary"]').attr('content'),
+      extractText($, 'article p:first-of-type'),
+      extractText($, 'main p:first-of-type'),
+    );
 
-    // Extract image - check multiple meta tag sources
-    const imageCandidates = [
-      $('meta[property="og:image:secure_url"]').attr('content'),
-      $('meta[property="og:image:url"]').attr('content'),
-      $('meta[property="og:image"]').attr('content'),
-      $('meta[name="twitter:image:src"]').attr('content'),
-      $('meta[name="twitter:image"]').attr('content'),
-    ];
-    
-    let imageUrl = resolveUrl(parsedUrl, pickFirst(...imageCandidates));
-
-    // If no meta image found, try to find a significant img element
-    if (!imageUrl) {
-      const images = $('img').toArray();
-      for (const img of images) {
-        const src = $(img).attr('src');
-        if (src && !src.includes('logo') && !src.includes('icon') && !src.includes('avatar')) {
-          imageUrl = resolveUrl(parsedUrl, src);
-          if (imageUrl) break;
-        }
-      }
-    }
-
-    // Verify the image URL if found
-    if (imageUrl) {
-      imageUrl = await verifyImage(imageUrl, parsedUrl.toString()) || '';
-    }
+    // Find the best image
+    const imageUrl = findBestImage($, parsedUrl);
 
     // Detect technology stack
     const technologies: string[] = [];
     
-    // Check meta tags
-    const generator = $('meta[name="generator"]').attr('content');
+    // Check meta tags for generators
+    const generator = $('meta[name="generator"]').attr('content')?.toLowerCase() || '';
     if (generator) {
-      if (generator.toLowerCase().includes('wordpress')) technologies.push('WordPress');
-      if (generator.toLowerCase().includes('drupal')) technologies.push('Drupal');
-      if (generator.toLowerCase().includes('joomla')) technologies.push('Joomla');
-      if (generator.toLowerCase().includes('squarespace')) technologies.push('Squarespace');
-      if (generator.toLowerCase().includes('wix')) technologies.push('Wix');
-      if (generator.toLowerCase().includes('shopify')) technologies.push('Shopify');
+      if (generator.includes('wordpress')) technologies.push('WordPress');
+      if (generator.includes('drupal')) technologies.push('Drupal');
+      if (generator.includes('joomla')) technologies.push('Joomla');
+      if (generator.includes('squarespace')) technologies.push('Squarespace');
+      if (generator.includes('wix')) technologies.push('Wix');
+      if (generator.includes('shopify')) technologies.push('Shopify');
+      if (generator.includes('ghost')) technologies.push('Ghost');
+      if (generator.includes('hugo')) technologies.push('Hugo');
+      if (generator.includes('gatsby')) technologies.push('Gatsby');
+      if (generator.includes('jekyll')) technologies.push('Jekyll');
     }
 
-    // Check for Next.js
-    if ($('script[src*="/_next/"]').length > 0 || $('script').text().includes('__NEXT_DATA__')) {
+    // Check for frameworks in scripts and DOM
+    const htmlContent = $.html();
+    
+    // Next.js detection
+    if ($('script[src*="/_next/"]').length > 0 || htmlContent.includes('__NEXT_DATA__')) {
       technologies.push('Next.js');
     }
-
-    // Check for React
-    if ($('script').text().includes('React') || $('div[id="root"]').length > 0) {
+    
+    // React detection
+    if (htmlContent.includes('react') || htmlContent.includes('React') || 
+        $('#root, #__next, [data-reactroot]').length > 0) {
       technologies.push('React');
     }
-
-    // Check for Vue
-    if ($('script').text().includes('Vue') || $('div[id="app"]').length > 0) {
+    
+    // Vue detection  
+    if (htmlContent.includes('Vue') || $('#app').length > 0 || $('[v-cloak]').length > 0) {
       technologies.push('Vue.js');
     }
-
-    // Check for Angular
-    if ($('script').text().includes('Angular') || $('[ng-app]').length > 0) {
+    
+    // Angular detection
+    if ($('[ng-app], [ng-controller], [ng-model]').length > 0 || 
+        htmlContent.includes('angular') || htmlContent.includes('Angular')) {
       technologies.push('Angular');
     }
+    
+    // Svelte detection
+    if (htmlContent.includes('__svelte') || htmlContent.includes('svelte')) {
+      technologies.push('Svelte');
+    }
 
-    // Check for popular frameworks by script sources
-    const scriptSrcs = $('script[src]').map((_, el) => $(el).attr('src')).get();
-    scriptSrcs.forEach((src: string) => {
-      if (src.includes('bootstrap')) technologies.push('Bootstrap');
-      if (src.includes('jquery')) technologies.push('jQuery');
-      if (src.includes('tailwind')) technologies.push('Tailwind CSS');
+    // Check for CSS frameworks
+    const linkHrefs = $('link[rel="stylesheet"]').map((_, el) => $(el).attr('href')).get();
+    const styleContent = $('style').text();
+    
+    linkHrefs.forEach((href: string) => {
+      if (href.includes('bootstrap')) technologies.push('Bootstrap');
+      if (href.includes('tailwind')) technologies.push('Tailwind CSS');
+      if (href.includes('bulma')) technologies.push('Bulma');
+      if (href.includes('materialize')) technologies.push('Materialize');
+      if (href.includes('foundation')) technologies.push('Foundation');
     });
+    
+    // Check inline styles for Tailwind
+    if ($('[class*="flex"], [class*="grid"], [class*="px-"], [class*="py-"]').length > 5) {
+      technologies.push('Tailwind CSS');
+    }
 
-    // Get favicon
+    // Get favicon - try multiple sources
     const faviconCandidates = [
       $('link[rel="icon"]').attr('href'),
       $('link[rel="shortcut icon"]').attr('href'),
       $('link[rel="apple-touch-icon"]').attr('href'),
-      '/favicon.ico'
+      $('link[rel="apple-touch-icon-precomposed"]').attr('href'),
+      '/favicon.ico',
+      '/favicon.png',
     ];
     
-    let favicon = resolveUrl(parsedUrl, pickFirst(...faviconCandidates));
+    const favicon = resolveUrl(parsedUrl, pickFirst(...faviconCandidates));
 
     return NextResponse.json({
-      title: title.trim().substring(0, 200), // Limit title length
-      description: description.trim().substring(0, 500), // Limit description length
+      title: title.substring(0, 200), // Limit title length
+      description: description.substring(0, 500), // Limit description length
       imageUrl: imageUrl || null,
       technologies: [...new Set(technologies)], // Remove duplicates
       favicon: favicon || null,
@@ -247,7 +322,7 @@ export async function POST(req: Request) {
   } catch (error) {
     console.error('Scraping error:', error);
     return NextResponse.json({ 
-      error: "Failed to scrape website" 
+      error: "Failed to scrape website. Please check the URL and try again." 
     }, { status: 500 });
   }
 }

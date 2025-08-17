@@ -14,11 +14,11 @@ export default async function UserPage({ params }: { params: { handle: string } 
 
   return (
     <main>
-      {/* Back to home header */}
+      {/* Back to dashboard header */}
       <header className="border-b">
         <div className="mx-auto max-w-4xl px-6 py-4">
-          <Link href="/" className="text-sm text-gray-600 hover:text-gray-900">
-            ← Back to shipshow.io
+          <Link href="/dashboard" className="text-sm text-gray-600 hover:text-gray-900">
+            ← Back to dashboard
           </Link>
         </div>
       </header>
