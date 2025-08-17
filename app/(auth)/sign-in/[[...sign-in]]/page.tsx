@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <main className="min-h-dvh grid place-items-center p-6">
       <ClientOnly>
-        <SignIn fallbackRedirectUrl="/dashboard" />
+        <SignIn afterSignInUrl="/dashboard" />
       </ClientOnly>
     </main>
   );
