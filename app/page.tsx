@@ -13,7 +13,7 @@ export default function HomePage() {
               shipshow.io<br/> <span className="text-gray-700">Show your work. Get hired.</span>
             </h1>
             <p className="mt-6 text-lg text-gray-600">
-              One page per user. Drop in up to 5 projects free. Upgrade for unlimited + custom domain.
+              One page per user. Drop in up to 5 projects free. Upgrade for unlimited.
             </p>
             <div className="mt-8 flex items-center gap-3">
               <Link href="/sign-up" className="rounded-md bg-black text-white px-5 py-3 hover:opacity-90">Get started free</Link>

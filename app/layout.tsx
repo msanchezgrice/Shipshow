@@ -6,18 +6,18 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "shipshow.io — Show your work. Get hired.",
   description:
-    "Dead-simple one-page portfolio for tinkerers, PMs, and builders. 5 projects free. $9/month for unlimited + custom domain.",
+    "Dead-simple one-page portfolio for tinkerers, PMs, and builders. 5 projects free. $9/month for unlimited.",
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
   openGraph: {
     title: "shipshow.io — Show your work. Get hired.",
-    description: "One page per user. 5 projects free. Upgrade for unlimited + custom domain.",
+    description: "One page per user. 5 projects free. Upgrade for unlimited.",
     url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
     siteName: "shipshow.io",
   },
   twitter: {
     card: "summary_large_image",
     title: "shipshow.io — Show your work. Get hired.",
-    description: "One page per user. 5 projects free. Upgrade for unlimited + custom domain.",
+    description: "One page per user. 5 projects free. Upgrade for unlimited.",
   },
   icons: {
     icon: "/favicon.ico",
