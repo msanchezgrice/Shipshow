@@ -12,6 +12,8 @@ model User {
   handle       String        @unique
   name         String?
   bio          String?
+  twitterUrl   String?
+  linkedInUrl  String?
   avatarUrl    String?
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
